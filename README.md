@@ -13,7 +13,7 @@ Once the data files are set up, the notebook can be run in an appropriate Python
 ## Preprocessing
 The data is processed according to the requirements of the package. A brief about the requirements given for the usage of the package are given below:
 - All the values (except the identifier: panchayat which is categorical) are numerical. There can be only one identifier column in the dataframe. 
-- The dataset is sorted by the identifier (panchayat) and then time unit (date).
+- The dataset is sorted by the identifier (panchayat) and then the time unit (date).
 - Analysis must be done using one treated unit and multiple control units. 
 - There should be no missing values for the outcome (NDVI). However, the package allows missing values for covariates, but, our data does not have any values missing. 
 
@@ -41,8 +41,8 @@ The data is decomposed into the above components using the `seasonal_decompose` 
 Covariate features are features that are useful during analysis but are not of direct interest to us. Alongside the outcome variable, several other covariate features are used to more effectively train the synthetic control model. Some of these features are:
 - **Surface Net Solar Radiation**: It is the amount of solar radiation reaching the Earth's surface minus the amount of solar radiation reflected from the Earth's surface assuming cloudless conditions. 
 - **Total Precipitation**: It is the total amount of rain or snow that falls to the Earth's surface. 
-- **U-component of wind**: Is is the speed of the wind along the east-west direction.
-- **V-component of wind**: Is is the speed of the wind along the north-south direction.
+- **U-component of wind**: It is the speed of the wind along the east-west direction.
+- **V-component of wind**: It is the speed of the wind along the north-south direction.
 - **2 meter Temperature**: It is the temperature measured in the shade at a height of 2 meters. It gives us a general idea of the current and future temperature at a particular place on the Earth's surface. 
 
 ## Results
@@ -54,7 +54,7 @@ A graph showing the actual and synthetic NDVI trend before and after treatment i
 
 ## Future work
 
-- Currently, the seasonal and residual component was removed only for the outcome variable (NDVI), however, perhaps the model would benifit from doing so for covariate data as well as it would make training easier. 
+- Currently, the seasonal and residual component was removed only for the outcome variable (NDVI), however, perhaps the model would benefit from doing so for covariate data as well as it would make training easier. 
 
 - We can also conduct several placebo tests where the treatment of interest is reassigned to a time other than when the treatment was done or to a panchayat other than the one treated. 
 
